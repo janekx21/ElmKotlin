@@ -1,0 +1,8 @@
+# development
+elm-stuff/
+/index.html
+elm.js
+.idea/
+
+# build
+dist/

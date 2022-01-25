@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Project {
+    String name
+    String short
+}
+
+class Backlog {
+    String name
+}
+
+class Issue {
+    IssueType type
+    Int number
+    String name
+    Epic epic
+    Importance importance
+    State state
+    Int points
+}
+
+class Epic {
+    String name
+    String short
+}
+
+class State {
+    String name
+}
+
+enum IssueType {
+    IMPROVEMENT
+    BUG
+    DEPT
+    TASK
+}
+
+enum Importance {
+    LOW
+    MEDIUM
+    HIGH
+}
+
+Project <-- Backlog
+Backlog <-- Issue
+Issue::type -- IssueType
+Issue::epic -- Epic
+Issue::importance -- Importance
+Issue::state -- State
+
+@enduml
